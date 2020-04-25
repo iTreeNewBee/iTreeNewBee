@@ -18,17 +18,17 @@ twitter_username: #gaohaoyang126
 facebook_username: #gaohaoyang.water
 github_username:  iTreeNewBee
 email: rskdwypy@outlook.com
-weibo_username: 李毛毛
-zhihu_username: 全宇宙最帅的男人
-linkedIn_username: 李毛毛
-dribbble_username:
+# weibo_username: https://weibo.com/cckchina/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1
+zhihu_username: quan-yu-zhou-zui-shuai-de-nan-ren-35
+linkedIn_username: %E4%BD%B3%E6%88%90-%E6%9D%8E-b50a4b183/
+#dribbble_username:
 
 description_footer: 来自李毛毛的Github博客！
 
 # comments
 # two ways to comment, only choose one, and use your own short name
 # 两种评论插件，选一个就好了，使用自己的 short_name
-duoshuo_shortname: #hygblog
+duoshuo_shortname: iTreeNewBee
 disqus_shortname: iTreeNewBee
 
 # statistic analysis 统计代码
