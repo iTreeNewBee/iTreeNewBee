@@ -23,7 +23,7 @@ zhihu_username: quan-yu-zhou-zui-shuai-de-nan-ren-35
 linkedIn_username: %E4%BD%B3%E6%88%90-%E6%9D%8E-b50a4b183/
 #dribbble_username:
 
-description_footer: 来自李毛毛的Github博客！
+description_footer: 来自李毛毛的个人博客！
 
 # comments
 # two ways to comment, only choose one, and use your own short name
@@ -35,8 +35,8 @@ disqus_shortname: iTreeNewBee
 # 百度统计 id，将统计代码替换为自己的百度统计id，即
 # hm.src = "//hm.baidu.com/hm.js?xxxxxxxxxxxx";
 # xxxxx字符串
-baidu_tongji_id: 7a8549ba966629b6bc7f80db0e31c934
-google_analytics_id:  # google 分析追踪id
+baidu_tongji_id: 552aa8d99c04e57a157ba015b317ce20
+google_analytics_id: UA-72449510-4 # google 分析追踪id
 
 # Build settings
 markdown: kramdown
