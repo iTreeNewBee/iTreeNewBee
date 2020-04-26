@@ -9,7 +9,7 @@ excerpt: sublime设置代码片段
 * content
 {:toc}
 
-##创建方法
+## 创建方法
 Tools > New Snippet
 然后你会看到
 这时你会看到如下示例代码：
@@ -24,7 +24,7 @@ Hello, ${1:this} is a ${2:snippet}.
      <!-- <scope>source.python</scope> -->
 </snippet>
 ```
-##说明
+## 说明
 ```
 <snippet>
      <content><![CDATA[
@@ -37,6 +37,6 @@ Hello, ${1:this} is a ${2:snippet}.
 </snippet>
 
 ```
-##使用
+## 使用
 ${1:name}表示代码插入后，光标所停留的位置，可同时插入多个。其中:name为自定义参数（可选）。
 ${2}表示代码插入后，按Tab键，光标会根据顺序跳转到相应位置（以此类推）。
