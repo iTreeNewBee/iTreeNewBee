@@ -19,7 +19,7 @@ excerpt: 摘自公众号“数字化企业”，作者 刘超
 但如果是非技术的人员，就可能比较难理解这三者之间的相互关系，所以有必要解释一下。
 ## 云计算最初的目标
 我们首先来说云计算。云计算最初的目标是对资源的管理，管理的主要是计算资源、网络资源、存储资源三个方面。
-![云计算的本质](https://github.com/iTreeNewBee/iTreeNewBee.github.io/issues/1#issuecomment-619464861)
+![云计算的本质](https://user-images.githubusercontent.com/55737454/80294976-1335d180-87a1-11ea-899e-e287002b832d.png)
 > 管数据中心就像配电脑
 
 什么叫计算、网络、存储资源？
