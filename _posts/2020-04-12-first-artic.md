@@ -148,7 +148,7 @@ hack方法比上面2种方法稳定得多，但是语义化太差。</p>
 <p>代码：</p>
 <pre><code>我经常去的几个网站[Google][1]、[Leanote][2]。
 
-[1]:http://www.google.com 
+[1]:http://www.google.com
 [2]:http://www.leanote.com
 </code></pre>
 <p>显示效果：</p>
@@ -606,3 +606,4 @@ x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}
 <p>&lt;/center&gt;</p>
 <p>版权归属 ©2019 择势勤</p>
 <hr>
+```
