@@ -8,6 +8,7 @@ excerpt: sublime设置代码片段
 ---
 * content
 {:toc}
+
 ##创建方法
 Tools > New Snippet
 然后你会看到
