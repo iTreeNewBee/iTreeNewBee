@@ -1,12 +1,36 @@
 ---
 layout: post
-title:  "http和https区别与联系"
+title:  "软件测试面试题整理（一）"
 date:   2020-04-30 10:56:28
-categories: web
-tags: http 
-excerpt: 精心整理一份详细的文章讲述http与https之间的关系
+categories: interview
+tags: interview offer  
+excerpt: 精心整理软件测试面试题，助力offer
 ---
 * content
 {:toc}  
 
-## http
+## HTTP与HTTPS区别
+* HTTP明文传输且无状态的，数据都是未加密的，安全性较差，HTTPS数据传输过程进行加密传输，而且传输数据前需要身份认证，所以安全性较好。
+* 使用HTTPS协议需要到CA（数字证书认证机构）申请证书。
+* HTTP页面响应速度比HTTPS快，主要是因为HTTP使用tcp三次握手建立连接，客户端和服务器需要交换3个包，而HTTPS除了tcp的三个包，还要加上ssl握手需要的9个包，一共12个包。
+* HTTP和HTTPS使用不同的连接方式，端口也不一样，前者80，后者443。
+* HTTPS是建构在ssl/tls之上的HTTP协议，所以HTTPS比HTTP更耗费服务器资源。
+
+## TCP与UDP区别
+* TCP面向连接，发送数据需要三次握手先建立连接；UDP是无连接的，发送数据前不需要建立连接
+* TCP提供可靠的服务，通过TCP连接传送的数据，无差错、不丢失、不重复，且按序到达；UDP尽最大努力交付，但不保证可靠交付。
+* TCP面向字节流，把数据看成一连串无结构的字节流；UDP是面向报文的，没有拥塞控制，网络出现拥塞不会降低发送速率。
+* TCP首部开销20字节；UDP首部开销8个字节
+* TCP是全双工的可靠信道，UDP则是不可靠信道。
+
+## 网络七层协议
+|OSI中的层|功能|TCP/IP协议族|
+|-|-|-|
+|应用层|文件传输，电子邮件，文件服务，虚拟终端|FTP，TFTP，HTTP，SNMP，DNS，Telnet|
+|表示层|数据格式化，代码转换，数据加密|没有协议|
+|会话层|解除或建立与别的节点的联系|没有协议|
+|传输层|提供端对端的接口|TCP，UDP|
+|网络层|为数据包选择路由|IP，ICMP，ARP，RARP...|
+|数据链路层|传输有地址的帧以及错误检测功能|PPP，MTU，ARP，RARP|
+|物理层|以二进制数据形式在物理媒体上传输数据|ISO2110，IEEE802，IEEE802.2|
+
