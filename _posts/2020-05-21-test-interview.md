@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "软件测试工程师面试题总结（二）"		
+title:  "软件测试工程师面试题总结(二)"		
 date:   2020-05-21 21:00:00
 categories: interview
 tags: interview
