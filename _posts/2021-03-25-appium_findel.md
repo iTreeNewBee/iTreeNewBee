@@ -4,7 +4,7 @@ title:  "Appium元素定位"
 date:   2021-03-25 13:01:03
 categories: Appium
 tags: tingyun.com
-excerpt: 
+excerpt: appium官方文档使用整理，常用方法，js示例语法
 ---
 * content
 {:toc}
@@ -36,23 +36,23 @@ let elementsOne = await driver.elementsByAccessibilityId("SomeAccessibilityID");
 
 ### 通过xpath定位
 
-1.层级定位
+#### 层级定位
 
 fullIndexXpath：全路径的形式
 
-2.text定位
+#### text定位
 
 ```
 let elementsOne = await driver.elementsByXpath("//*[@text='查找的文本']");
 ```
 
-3.contains模糊定位
+#### contains模糊定位
 
 ```
 let elementsOne = await driver.elementsByXpath("//<class_name>[contains(@text, '查找的文本')]");
 ```
 
-4.组合定位
+#### 组合定位
 
 同时包含class和text两个属性
 
@@ -60,23 +60,23 @@ let elementsOne = await driver.elementsByXpath("//<class_name>[contains(@text, '
 let elementsOne = await driver.elementsByXpath("//*[@text='查找的文本' and @class='<class_name>']");
 ```
 
-5.通过UIAutomator定位
+#### 通过UIAutomator定位
 
 android uiautomator原理是通过android 自带的android uiautomator的类库去查找元素，其实和appium的定位一样，或者说他比appium的定位方式更佳多以及更佳适用，它也支持id、className、text、模糊匹配等进行定位。
 
-5.1.text定位
+##### text定位
 
 ```
 let el = await driver.elementByAndroidUIAutomator("new UiSelector().text('查找的文本')");
 ```
 
-5.2.text模糊定位
+##### text模糊定位
 
 ```
 let el = await driver.elementByAndroidUIAutomator("new UiSelector().textContains('查找的文本')");
 ```
 
-5.3.textStartsWith定位
+##### textStartsWith定位
 
 以text开始
 
@@ -84,19 +84,19 @@ let el = await driver.elementByAndroidUIAutomator("new UiSelector().textContains
 let el = await driver.elementByAndroidUIAutomator("new UiSelector().textStartsWith('查找的文本')");
 ```
 
-5.4.textMatches正则匹配查找
+##### textMatches正则匹配查找
 
 ```
 let el = await driver.elementByAndroidUIAutomator("new UiSelector().textMatches('^查找的文本.*')");
 ```
 
-5.5.resourceID定位
+##### resourceID定位
 
 ```
 let el = await driver.elementByAndroidUIAutomator("new UiSelector().resourceID('id')");
 ```
 
-5.6.resourceIDMatches定位
+##### resourceIDMatches定位
 
 通过id进行正则匹配定位
 
@@ -104,13 +104,13 @@ let el = await driver.elementByAndroidUIAutomator("new UiSelector().resourceID('
 let el = await driver.elementByAndroidUIAutomator("new UiSelector().resourceIdMatches('.+id')");
 ```
 
-5.7.className定位
+##### className定位
 
 ```
 let el = await driver.elementByAndroidUIAutomator("new UiSelector().className('<class_name>')");
 ```
 
-5.8.classNameMatches定位
+##### classNameMatches定位
 
 通过className正则匹配进行定位
 
@@ -118,13 +118,13 @@ let el = await driver.elementByAndroidUIAutomator("new UiSelector().className('<
 let el = await driver.elementByAndroidUIAutomator("new UiSelector().classNameMatches('.+<class_name>')");
 ```
 
-5.9.组合定位
+##### 组合定位
 
 ```
 let el = await driver.elementByAndroidUIAutomator("new UiSelector().resourceId('id').text('查找的文本')");
 ```
 
-5.10.父子关系、兄弟关系定位
+##### 父子关系、兄弟关系定位
 
 ```
 //父子关系
@@ -136,7 +136,7 @@ let el = await driver.elementByAndroidUIAutomator("new UiSelector().resourceId('
 let el = await driver.elementByAndroidUIAutomator("new UiSelector().resourceId('id').fromParent(text('查找的文本'))");
 ```
 
-5.11.滚动查找
+##### 滚动查找
 
 ```
 let el = await driver.elementByAndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().text('查找的元素文本').instance(0));");
@@ -144,31 +144,31 @@ let el = await driver.elementByAndroidUIAutomator("new UiScrollable(new UiSelect
 
 ## 常用api及属性
 
-1.获取页面源码（xml层级结构）
+### 获取页面源码（xml层级结构）
 
 ```
 let pageSource = await driver.source();
 ```
 
-2.隐式等待
+### 隐式等待
 
 ```
 await driver.setImplicitWaitTimeout(20000);
 ```
 
-3.强制等待
+### 强制等待
 
 ```
 await driver.sleep(5000);
 ```
 
-4.允许授权
+### 允许授权
 
 ```
 await driver.passPermission();
 ```
 
-5.click
+### click
 
 元素点击方法
 
@@ -177,7 +177,7 @@ let element = await driver.elementByAccessibilityId('id', 'SomeId');
 await element.click();
 ```
 
-6.sendKeys
+### sendKeys
 
 向元素输入一连串的按键
 
@@ -192,7 +192,7 @@ let element = await driver.elementByAccessibilityId("SomeAccessibilityID");
 await element.sendKeys("Hello world!");
 ```
 
-7.clear
+### clear
 
 清除某一元素值
 
@@ -201,7 +201,7 @@ let element = await driver.elementByAccessibilityId("SomeAccessibilityID");
 await element.clear();
 ```
 
-8.text
+### text
 
 返回元素可见的文本
 
@@ -210,7 +210,7 @@ let element = await driver.elementByAccessibilityId("SomeAccessibilityID");
 await element.text();
 ```
 
-9.Name
+### Name
 
 获得元素标签名
 
@@ -219,7 +219,7 @@ let element = await driver.elementByAccessibilityId("SomeAccessibilityID");
 let tagName = await element.getTagName();
 ```
 
-10.Attribute
+### Attribute
 
 获得元素属性值
 
@@ -230,7 +230,7 @@ let tagName = await element.getAttribute("content-desc");
 
 返回类型string
 
-11.selected
+### selected
 
 确定表单元素被选中
 
@@ -241,7 +241,7 @@ let isSelected = await element.isSelected();
 
 返回布尔值
 
-12.Enable
+### Enable
 
 判断一个元素当前是否可操作
 
@@ -252,7 +252,7 @@ let isEnabled = await element.isEnabled();
 
 返回布尔值
 
-13.Location
+### Location
 
 确定元素在页面或屏幕上的位置
 
@@ -263,7 +263,7 @@ let location = await element.getLocation();
 
 点 (0, 0) 指的是页面的左上角. 元素的坐标以具有x和y属性的JSON对象返回
 
-14.size
+### size
 
 获取元素大小
 
@@ -274,7 +274,7 @@ let size = await element.getSize();
 
 尺寸将作为具有宽度和高度属性的对象返回,width:元素的宽度,height:元素的高度
 
-15.Rect
+### Rect
 
 获取元素的维度和坐标
 
@@ -290,7 +290,7 @@ let rect = await element.getRect();
 |height|数值类型|矩形框高度|
 |width|数值类型|矩形框宽度|
 
-16.Submit
+### Submit
 
 提交表单
 
@@ -301,7 +301,7 @@ await element.submit();
 
 该提交命令也适用于表单元素的子类（Web网页适用)
 
-17.Equals Element
+### Equals Element
 
 判断元素是否相等(判断两个元素的ID是否指向同一元素)
 
@@ -311,7 +311,7 @@ let elementTwo = await driver.elementByClassName("someOtherClass");
 let isEqual = await elementOne.equalsElement(elementTwo);
 ```
 
-18.Move to
+### Move to
 
 将鼠标移动指定元素的偏移量
 
@@ -322,7 +322,7 @@ await driver.moveTo(element, 10, 10);
 如果未指定任何元素，则移动是相对于当前鼠标光标的。 如果提供了元素但没有偏移，则鼠标将移动到元素的中心。 如果该元素不可见，则将其滚动到视图中。
 
 
-19.双击
+### 双击
 
 双击鼠标
 
@@ -331,7 +331,7 @@ await driver.moveTo(element);
 await driver.doubleclick();
 ```
 
-20.Button Down
+### Button Down
 
 单机当前鼠标坐标处，并按住鼠标左键
 
@@ -340,7 +340,7 @@ await driver.moveTo(element);
 await driver.buttonDown();
 ```
 
-21.Button Up
+### Button Up
 
 释放之前按住的鼠标按钮
 
@@ -351,9 +351,9 @@ await driver.moveTo(element, 10, 10);
 await driver.buttonUp();
 ```
 
-22.touch
+### touch
 
-22.1.single tap
+#### single tap
 
 轻按屏幕启用设备
 
@@ -394,7 +394,7 @@ let el1 = await driver.elementById('com.yt.hxmb50.launcher:id/custom_input');
         }
 ```
 
-22.2.Move
+#### Move
 
 手指在屏幕上移动
 
@@ -407,7 +407,7 @@ action.press({x: 10, y: 10})
 await action.perform();
 ```
 
-22.3.Long Tap
+#### Long Tap
 
 长按
 
@@ -417,7 +417,7 @@ action.longPress({el: element});
 await action.perform();
 ```
 
-22.4.Scroll
+#### Scroll
 
 滚动事件
 
@@ -425,7 +425,7 @@ await action.perform();
 await driver.scroll(10, 100);
 ```
 
-22.5.Flick
+#### Flick
 
 滑动事件
 
